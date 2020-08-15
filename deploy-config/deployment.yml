@@ -23,6 +23,11 @@ spec:
               add:
                 - NET_ADMIN
       containers:
+        - name: auth-proxy
+          image: auth-sidecar-demo/auth-proxy
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
         - name: resource-server
           image: auth-sidecar-demo/resource-server
           imagePullPolicy: Never

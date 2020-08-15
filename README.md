@@ -52,6 +52,21 @@ Response:
 }
 ```
 
+### Permissions
+
+| Username | Read Data | Write Data |
+| :--- | :---: | :---: |
+| alice | yes | no |
+| bob | yes | yes |
+| chuck | no | no |
+
+## Further exploration
+
+- Make the AuthN/AuthZ proxy configurable and independent of the resource server
+- Use lightweight servers/frameworks for the AuthN/AuthZ proxy for performance
+- Add trusted issuer check and external authorization checks
+- Other use cases: auditing, tracing
+
 ## References
 
 - [Kubernetes - Pods - Resource sharing and communication](https://kubernetes.io/docs/concepts/workloads/pods/#resource-sharing-and-communication)
