@@ -14,6 +14,14 @@ spec:
       labels:
         app: auth-sidecar-demo
     spec:
+      initContainers:
+        - name: auth-proxy-init
+          image: auth-sidecar-demo/auth-proxy-init
+          imagePullPolicy: Never
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
       containers:
         - name: resource-server
           image: auth-sidecar-demo/resource-server
