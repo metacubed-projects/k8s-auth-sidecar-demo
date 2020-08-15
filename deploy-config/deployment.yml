@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: auth-sidecar-demo
+  name: auth-sidecar-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-sidecar-demo
+  template:
+    metadata:
+      labels:
+        app: auth-sidecar-demo
+    spec:
+      containers:
+        - name: resource-server
+          image: auth-sidecar-demo/resource-server
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
